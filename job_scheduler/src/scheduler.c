@@ -16,6 +16,7 @@
 #define INTERVAL 10
 
 int readfifo, writefifo; // fifo file descriptor
+int nullfile; //
 char message[BUFSIZ]; // stores message for scheduler send to client
 job_info *running_job = NULL; // always set to NULL if there is no job running
 int next_jid = 0; // next available jid can be assigned
@@ -59,6 +60,9 @@ int main(int argn, char **argv) {
     mkfifo(CS_FIFO_PATH, 0666);
     mkfifo(SC_FIFO_PATH, 0666);
     readfifo = open(CS_FIFO_PATH, O_RDONLY | O_NONBLOCK);
+
+    // open null device
+    nullfile = open("/dev/null", O_WRONLY);
 
     // enter loop to keep running
     while (true);
@@ -144,6 +148,7 @@ void do_enq(const job_cmd *cmd) {
         exit(EXIT_FAILURE);
     }
     if (pid == 0) { // child process
+        dup2(nullfile, 1); // redirect stdout to /dev/null
         execv(args[0], &args[1]);
         // if exec fails, let parent know
         close(fd[0]);
