@@ -1,8 +1,8 @@
 #! /bin/sh
 
-echo "xterm -e ../bin/scheduler"
+echo "gnome-terminal -e ../bin/scheduler"
 
-xterm -e ../bin/scheduler &
+gnome-terminal -e ../bin/scheduler &
 
 echo "press enter to start:"
 
@@ -31,6 +31,10 @@ echo "../bin/enq -p 4 $(pwd)/job_100s"
 ../bin/enq -p 4 $(pwd)/job_100s
 
 echo
+
+echo "../bin/enq -p 0 $(pwd)/job_20s_output"
+
+../bin/enq -p 0 $(pwd)/job_20s_output
 
 echo "../bin/deq 1"
 
