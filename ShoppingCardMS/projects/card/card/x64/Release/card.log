@@ -1,0 +1,24 @@
+﻿  customer.cpp
+customer.cpp(9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\string.h(136): note: 参见“strcpy”的声明
+customer.cpp(10): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\string.h(136): note: 参见“strcpy”的声明
+customer.cpp(57): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\string.h(136): note: 参见“strcpy”的声明
+  main.cpp
+  menu.cpp
+menu.cpp(39): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\conio.h(452): note: 参见“getch”的声明
+menu.cpp(290): warning C4101: “index”: 未引用的局部变量
+menu.cpp(480): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+menu.cpp(481): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+menu.cpp(537): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\time.h(505): note: 参见“localtime”的声明
+  shop.cpp
+shop.cpp(35): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+shop.cpp(127): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+shop.cpp(166): warning C4244: “参数”: 从“double”转换到“int”，可能丢失数据
+  正在生成代码
+  All 728 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  card.vcxproj -> D:\Documents\VS2017\projects\card\x64\Release\card.exe
