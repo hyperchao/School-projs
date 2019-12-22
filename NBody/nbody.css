@@ -1,0 +1,62 @@
+body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("universe.jpg");
+    height: 100%;
+}
+
+.caption {
+    position: absolute;
+    left: 0;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 5px;
+    opacity: 0.65;
+}
+
+p {
+    background-color: #000;
+    text-align: left;
+    color: gold;
+    opacity: 0.65;
+}
+
+.content {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    top: 20%;
+    height: 75%;
+}
+
+.left {
+    position: relative;
+    float: left;
+    max-width: 75%;
+    height: 100%;
+    width: 100%;
+}
+
+.right {
+    position: relative;
+    float: right;
+    max-width: 20%;
+    height: 100%;
+    width: 100%;
+    /* background-color: white; */
+    opacity: 0.8;
+}
+
+#universe-info {
+    display: none;
+}

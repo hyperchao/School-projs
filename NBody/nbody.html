@@ -1,0 +1,99 @@
+<html>
+<head>
+    <title>N-body</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="nbody.css"/>
+    <script type="text/javascript" src="Common/webgl-utils.js"></script>
+    <script type="text/javascript" src="Common/initShaders.js"></script>
+    <script type="text/javascript" src="Common/MV.js"></script>
+    <script type="text/javascript" src="nbody.js"></script>
+    <script type="x-shader/x-vertex" id="vertex-shader">
+        attribute vec4 vPosition;
+        uniform mat4 translateMatrix;
+
+        void main() {
+            gl_Position = translateMatrix*vPosition;
+        }
+    </script>
+    <script type="x-shader/x-fragment" id="fragment-shader">
+        void main() {
+            gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="caption">
+        <span class="border">N-Body</span>
+    </div>
+    <div class="content">
+        <table>
+            <tr>
+                <td rowspan="2">
+                    <canvas id="gl-canvas" width="512" height="512"></canvas>
+                </td>
+                <td valign="top" height="10%">
+                    <div>
+                        <select id="universe-selector">
+                            <option value="3body.txt">3body</option>
+                            <option value="8star-rotation.txt">8star-rotation</option>
+                            <option value="antimatter.txt">antimatter</option>
+                            <option value="atom.txt">atom</option>
+                            <option value="awesome.txt">awesome</option>
+                            <option value="binary.txt">binary</option>
+                            <option value="binaryStars.txt">binaryStars</option>
+                            <option value="bowling.txt">bowling</option>
+                            <option value="chaosblossom.txt">chaosblossom</option>
+                            <option value="dance10.txt">dance10</option>
+                            <option value="entropy-universe.txt">entrophy-universe</option>
+                            <option value="fourellipses.txt">fourellipses</option>
+                            <option value="galaxy.txt">galaxy</option>
+                            <option value="hypnosis.txt">hypnosis</option>
+                            <option value="illusion.txt">illusion</option>
+                            <option value="kaleidoscope.txt">kaleidoscope</option>
+                            <option value="kevin.txt">kevin</option>
+                            <option value="planets-elliptical.txt">planets-elliptical</option>
+                            <option value="planets.txt">planets</option>
+                            <option value="quad-stars.txt">quad-stars</option>
+                            <option value="renegade.txt">renegade</option>
+                            <option value="sbh2.txt">sbh2</option>
+                            <option value="sbh3.txt">sbh3</option>
+                            <option value="spiral.txt">spiral</option>
+                            <option value="suninterference.txt">suninterference</option>
+                            <option value="twin-binaries.txt">twin-binaries</option>
+                            <option value="uniform3.txt">uniform3</option>
+                            <option value="uniform8.txt">uniform8</option>
+                            <option value="uniform100.txt">uniform100</option>
+                        </select>
+                        <button id="random-universe">创建随机宇宙</button>
+                        <button id="create-universe">创建我的宇宙</button>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" height="90%">
+                    <p id="desc"></p>
+                    <div id="universe-info">
+                        <textarea rows="12" cols="50" id="text-input"></textarea>
+                        <input type="file" id="file-input"/>
+                        <button id="submit-universe">提交</button>
+                        <p>
+                            请输入宇宙的初始状态：<br />
+                            第一行为一个整数n，表示有多少个天体<br />
+                            第二行为宇宙的半径<br />
+                            接下来n行描述每个天体的初始状态，分别为x方向的位置，y方向的位置，x方向的速度，y方向的速度，天体的质量,以空格分隔。
+                            <br />
+                            完整示例如下：<br />
+                            3<br />
+                            1.25e11<br />
+                            0.000e00 0.000e00 0.0500e04 0.000e00  5.974e24<br />
+                            0.000e00 4.500e10 3.000e04 0.000e00   1.989e30<br />
+                            0.000e00 -4.500e10 -3.000e04 0.000e00 1.989e30<br />
+                        </p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
